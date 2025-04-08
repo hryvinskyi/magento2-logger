@@ -10,6 +10,7 @@ namespace Hryvinskyi\Logger\Model;
 
 use Magento\Framework\Filesystem\DriverInterface;
 use Magento\Framework\Logger\Handler\Base;
+use Monolog\LogRecord;
 
 /**
  * Class Debug
@@ -47,7 +48,7 @@ class Handler extends Base
      *
      * @throws \Magento\Framework\Exception\FileSystemException
      */
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
         if ($this->config->isDebug() === false) {
             return;
