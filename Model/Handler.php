@@ -40,7 +40,7 @@ class Handler extends Base
     ) {
         $this->config = $config;
 
-        parent::__construct($filesystem, $filePath, $fileName);
+        parent::__construct($filesystem, $filePath, ltrim($fileName, '/'));
     }
 
     /**
